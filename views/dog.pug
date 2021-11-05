@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to the dog pug
+  div(class="container-fluid")
+        div(class="row")
+            -
+                let dog = [
+                    {
+                        "name": "sheperd",
+                        "breed": "husky",
+                        "cost": "5000 USD"
+                    },
+                    {
+                        "name": "malibu",
+                        "breed": "pug",
+                        "cost": "6000 USD"
+                    },
+                    {
+                        "name": "chase",
+                        "breed": "hound",
+                        "cost": "6500 USD"
+                    },                   
+                ]
+            each n,index in dog
+                div(class='row')
+                 div(class="col-sm-2" onclick=`buy(${index})`) #{n.name}
+                 div(class="col-sm-2" onclick=`buy(${index})`) #{n.breed}
+                 div(class="col-sm-2" onclick=`buy(${index})`) #{n.cost}
+                 
+  script.                
+    function buy(product)
+    {
+        alert(`You Purchased Item ${product+1}`)
+    }
