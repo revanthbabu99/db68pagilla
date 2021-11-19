@@ -26,3 +26,4 @@ router.get('/costumes/:id', costume_controller.costume_detail);
 // GET request for list of all Costume items.
 router.get('/costumes', costume_controller.costume_list);
 module.exports = router;
+   
